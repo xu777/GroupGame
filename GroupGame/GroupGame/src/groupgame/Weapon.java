@@ -7,8 +7,8 @@ package groupgame;
 
 /**
  *
- * @author ORENG
+ * @author ryanlingxiao
  */
-public class MapInterface {
+public class Weapon {
     
 }

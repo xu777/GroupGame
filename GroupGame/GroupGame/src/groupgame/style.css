@@ -1,0 +1,34 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.whitepanes{
+	-fx-border-color:red;
+	-fx-background-color:white;
+	-fx-border-style:solid;
+	-fx-border-width:2px;
+}
+.panelables{
+	-fx-background-color:white;
+	-fx-padding:5;
+	-fx-font-size:15px;
+	-fx-alignment:center;
+}
+.buttons{
+	-fx-effect: dropshadow(two-pass-box , darkgray, 10, 0.0 , 4, 5);
+	-fx-background-radius:15;
+	-fx-font-size:14px;
+}
+
+.buttons:hover{
+    -fx-background-color: lightgray;
+}
+
+.checkbox{
+	-fx-background-color:white;
+	-fx-font-size:14px;
+}
+.radiobutton{
+	-fx-background-color:white;
+	-fx-font-size:14px;
+}

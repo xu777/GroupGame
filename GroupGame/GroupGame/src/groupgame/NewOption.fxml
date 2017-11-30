@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.NewOptionController">
+   <children>
+      <AnchorPane layoutX="70.0" layoutY="50.0" prefHeight="301.0" prefWidth="310.0" styleClass="whitepanes" stylesheets="@style.css">
+         <children>
+            <Button layoutX="92.0" layoutY="191.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Start" />
+            <Button layoutX="92.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Back" />
+            <Label layoutX="92.0" layoutY="69.0" text="Players:" />
+            <ChoiceBox layoutX="141.0" layoutY="65.0" prefHeight="25.0" prefWidth="73.0" />
+            <Label layoutX="92.0" layoutY="127.0" text="Map:" />
+            <ChoiceBox layoutX="141.0" layoutY="123.0" prefHeight="25.0" prefWidth="73.0" />
+         </children>
+      </AnchorPane>
+      <MenuBar layoutY="2.0" prefHeight="30.0" prefWidth="450.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Game">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Load" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

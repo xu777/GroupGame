@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.MainController">
+    <children>
+      <AnchorPane layoutX="111.0" layoutY="55.0" prefHeight="290.0" prefWidth="234.0" styleClass="whitepanes" stylesheets="@style.css">
+         <children>
+            <Button layoutX="71.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="New" />
+            <Button layoutX="71.0" layoutY="133.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Load" />
+            <Button layoutX="71.0" layoutY="178.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Exit" />
+         </children>
+      </AnchorPane>
+      <MenuBar layoutY="2.0" prefHeight="30.0" prefWidth="450.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Game">
+            <items>
+              <MenuItem mnemonicParsing="false" text="New" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Load" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+    </children>
+</AnchorPane>
