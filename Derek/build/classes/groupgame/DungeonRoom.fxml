@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.DungeonRoomController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <HBox prefHeight="46.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#OpenInventory" text="Inventory" />
+                  <Button mnemonicParsing="false" onAction="#clickSleep" text="Sleep" />
+                  <Button mnemonicParsing="false" onAction="#clickSearch" text="Search" />
+                  <Button mnemonicParsing="false" onAction="#clickLoot" text="Loot" />
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <Button mnemonicParsing="false" text="Move Left" BorderPane.alignment="CENTER" />
+         </left>
+         <top>
+            <Button mnemonicParsing="false" text="Move Forward" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <Button mnemonicParsing="false" text="Move Right" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</StackPane>

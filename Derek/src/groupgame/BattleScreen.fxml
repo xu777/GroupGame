@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.BattleScreenController">
+   <children>
+      <Pane fx:id="Root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fx:id="image" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane fx:id="anch1" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <SplitPane fx:id="splitMain" dividerPositions="0.3795986622073579" layoutY="289.0" prefHeight="113.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="289.0">
+                     <items>
+                        <AnchorPane fx:id="anch2" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox fx:id="vbox1" prefHeight="111.0" prefWidth="120.0">
+                                 <children>
+                                    <HBox fx:id="h1" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="enemyNameOne" prefHeight="21.0" prefWidth="101.0" text="Label" />
+                                          <Label fx:id="EnemyNameTwo" prefHeight="21.0" prefWidth="19.0" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="h2" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="EnemyNameThree" prefHeight="21.0" prefWidth="104.0" text="Label" />
+                                          <Label fx:id="EnemyNameFour" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="h3" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="EnemyNameFive" prefHeight="21.0" prefWidth="104.0" text="Label" />
+                                          <Label fx:id="EnemyNameSix" text="Label" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="anch3" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox fx:id="Vbox3" prefHeight="111.0" prefWidth="367.0">
+                                 <children>
+                                    <HBox fx:id="h4" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="PlayerName1" prefHeight="21.0" prefWidth="101.0" text="Label" />
+                                          <Label fx:id="Player1Frac" prefHeight="21.0" prefWidth="124.0" text="Label" />
+                                          <ProgressBar fx:id="Player1Health" prefHeight="23.0" prefWidth="166.0" progress="0.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="h5" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="PlayerName2" prefHeight="21.0" prefWidth="106.0" text="Label" />
+                                          <Label fx:id="Player2Frac" prefHeight="21.0" prefWidth="124.0" text="Label" />
+                                          <ProgressBar fx:id="Player2Health" prefHeight="23.0" prefWidth="169.0" progress="0.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="h6" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="PlayerName3" prefHeight="21.0" prefWidth="108.0" text="Label" />
+                                          <Label fx:id="Player3Frac" prefHeight="21.0" prefWidth="126.0" text="Label" />
+                                          <ProgressBar fx:id="Player3Health" prefHeight="23.0" prefWidth="172.0" progress="0.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="h7" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="PlayerName4" prefHeight="21.0" prefWidth="99.0" text="Label" />
+                                          <Label fx:id="Player4Frac" prefHeight="21.0" prefWidth="114.0" text="Label" />
+                                          <ProgressBar fx:id="Player4Health" prefHeight="23.0" prefWidth="160.0" progress="0.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+                  <StackPane layoutY="291.0" prefHeight="109.0" prefWidth="223.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Fight" />
+                              <Label text="Magic" />
+                              <Label text="Item" />
+                              <Label text="Run" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

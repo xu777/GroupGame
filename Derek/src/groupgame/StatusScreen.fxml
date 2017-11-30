@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.StatusScreenController">
+   <right>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="164.0">
+               <children>
+                  <Label text="Inventory" />
+                  <Label text="Items" />
+                  <Label text="Save" />
+                  <Label text="Gold:" />
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </right>
+   <left>
+      <StackPane prefHeight="400.0" prefWidth="395.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+         </children>
+      </StackPane>
+   </left>
+</BorderPane>
