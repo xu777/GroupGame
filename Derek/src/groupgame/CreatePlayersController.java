@@ -36,7 +36,11 @@ public class CreatePlayersController implements Initializable {
     
      private int playerNumber = 0;
      
-    
+         Player p1 = new Player();
+         Player p2 = new Player();
+         Player p3 = new Player();
+         Player p4 = new Player();
+
 
     @FXML
     private StackPane StackPane1;
@@ -134,10 +138,7 @@ public class CreatePlayersController implements Initializable {
 
     @FXML
     private void onContinue2(ActionEvent event) {
-             Player p1 = new Player();
-             Player p2 = new Player();
-             Player p3 = new Player();
-             Player p4 = new Player();
+            
          if (Player1.isSelected()){
             playerNumber = 1; 
         }
@@ -154,9 +155,7 @@ public class CreatePlayersController implements Initializable {
             playerNumber = 4; 
              tab2.setDisable(false);
              tab3.setDisable(false);
-             tab4.setDisable(false);
-
-              
+             tab4.setDisable(false);  
         } 
            if (playerNumber > 0 ){
                 StackPane2.setVisible(true);
@@ -168,33 +167,38 @@ public class CreatePlayersController implements Initializable {
     @FXML 
     private void setName1(ActionEvent event) {
         nameLabel.setText(pName1.getText());
-     
-//      p1.setName(pName1.getText());
+        p1.setName(pName1.getText());
         
     }
     
     @FXML
     private void setName2(ActionEvent event) {
             nameLabel2.setText(pName2.getText());
-           // p2.setName(pName2.getText());
+            p2.setName(pName2.getText());
     }
 
     @FXML
     private void setName3(ActionEvent event) {
             nameLabel3.setText(pName3.getText());
-           // p3.setName(pName3.getText());
+            p3.setName(pName3.getText());
     }
 
     @FXML
     private void setName4(ActionEvent event) {
             nameLabel4.setText(pName4.getText());
-           // p4.setName(pName4.getText());
+            p4.setName(pName4.getText());
             
     }
     
     
     @FXML
     private void handleRollStats(ActionEvent event) {
+        p1.setAgility(RollStats());
+        p1.setStrength(RollStats());
+        p1.setWisdom(RollStats());
+        strengthNumView.setText();
+       // agilityNumView.setText();
+       // wisdomNumView.setText();
         
         
         
@@ -220,13 +224,10 @@ public class CreatePlayersController implements Initializable {
 
     @FXML
     private void startGame(ActionEvent event) throws IOException  {
-     //  if (p1.role = "Null" ){
-           
-           
-           
-           
-   //    }
-    //   else {
+       if (p1.equals("null") ){
+             
+       }
+       else {
         Parent choose_characters_parent =  FXMLLoader.load(getClass().getResource("DungeonRoom.fxml"));
         Scene ChooseCharacters = new Scene(choose_characters_parent);
         Stage stage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -234,6 +235,17 @@ public class CreatePlayersController implements Initializable {
         stage2.setTitle("Room");
         stage2.show(); 
         
-     //  }
+       }
     }   
+
+    public int RollStats() {
+         int i = 0;
+         int x = 0;
+         Random rand3 = new Random();
+            while(i < 3){
+                  x += rand3.nextInt(6)+ 1;
+                 i++;
+            }
+         return x;          
+    }
 }

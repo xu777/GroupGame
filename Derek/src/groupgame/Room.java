@@ -34,12 +34,12 @@ public class Room {
         encounter = rand2.nextInt(10);
         if (encounter <= 8){
         
-    //    Parent choose_characters_parent =  FXMLLoader.load(getClass().getResource("BattleScreen.fxml"));
-    //    Scene ChooseCharacters = new Scene(choose_characters_parent);
-    //    Stage stage4 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-     //   stage4.setScene(ChooseCharacters);
-     //   stage4.setTitle("Fight!");
-     //   stage4.show(); 
+       // Parent choose_characters_parent =  FXMLLoader.load(getClass().getResource("BattleScreen.fxml"));
+       // Scene ChooseCharacters = new Scene(choose_characters_parent);
+       // Stage stage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       // stage2.setScene(ChooseCharacters);
+       // stage2.setTitle("Room");
+        //stage2.show(); 
          
     }
     
