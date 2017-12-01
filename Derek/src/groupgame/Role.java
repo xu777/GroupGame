@@ -7,14 +7,8 @@ package groupgame;
 
 /**
  *
- * @author hehnd
+ * @author ryanlingxiao
  */
-class Role {
-    
-    public Role(String role){
-        
-        
-    }
-    
+public class Role {
     
 }
