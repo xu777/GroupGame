@@ -1,0 +1,155 @@
+package gameproject.Action;
+
+//*******************************************
+//@author kareem                           **
+//*******************************************
+
+public class Enemy{
+	
+	private String name;
+	private int health;
+	private int rank;
+	private int strength;
+	private int wisdom;
+	private int agility;
+	private Weapon weapon;
+	private Armor armor;
+	public String message;
+	
+	
+	public Enemy()
+	{
+		private String name = "";
+		private int health = 0;
+		private int rank = 0;
+		private int strength = 0;
+		private int wisdom = 0;
+		private int agility = 0;
+		public String message = "";
+	}//defualt
+	
+	public Enemy(int rank, int health, int strength, int wisdom, int agility)
+	{
+		if(rank == 1){
+			setName("troll");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+		}
+		else if(rank == 2){
+			setName("goblin");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+		}
+		else if(rank == 3){
+			setName("ryuk");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+		}
+		else if(rank == 4){
+			setName("hunter");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+		}
+		else if(rank == 5){
+			setName("witch");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+			}
+		else(rank == 6){
+			setName("reaper");
+			setHealth(health);
+			setRank(rank);
+			setStrength(strength);
+			setWisdom(wisdom);
+			setAgility(agility);
+		}
+	}
+	
+	
+	public getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public int getHealth(){
+		return this.health;
+	}
+	
+	public void setHealth(int health){
+		this.health= health;
+	}
+	
+	public int getRank(){
+		return this.rank;
+	}
+	
+	public void setRank(int rank){
+		this.rank = rank;
+	}
+	
+	public int getStrength(){
+		return this.strength;
+	}
+	
+	public void setStrength(int strength){
+		this.strength = strength;
+	}
+	
+	public int getWisdom(){
+		return this.wisdom;
+	}
+	
+	public void setWisdom(int wisdom){
+		this.wisdom = wisdom;
+	}
+	
+	public int getAgility(int agility){
+		this.agility = agility;
+	}
+	
+	public void setAgility(int agility){
+		this.agility = agility;
+	}
+	
+	public Weapon getWeapon(){
+		return this.weapon;
+	}
+	
+	public void Weapon setWeapon(Weapon weapon){
+		this.weapon = weapon;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
