@@ -1,0 +1,84 @@
+package gameproject.Action;
+
+
+publkic class Enemy{
+	
+	private String name;
+	private int health;
+	private int rank;
+	private int strength;
+	private int wisdom;
+	private int agility;
+	private Weapon weapon;
+	private Armor armor;
+	
+	
+	
+	public getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public int getHealth(){
+		return this.health;
+	}
+	
+	public void setHealth(int health){
+		this.health= health;
+	}
+	
+	public int getRank(){
+		return this.rank;
+	}
+	
+	public void setRank(int rank){
+		this.rank = rank;
+	}
+	
+	public int getStrength(){
+		return this.strength;
+	}
+	
+	public void setStrength(int strength){
+		this.strength = strength;
+	}
+	
+	public int getWisdom(){
+		return this.wisdom;
+	}
+	
+	public void setWisdom(int wisdom){
+		this.wisdom = wisdom;
+	}
+	
+	public int getAgility(int agility){
+		this.agility = agility;
+	}
+	
+	public Weapon getWeapon(){
+		return this.weapon;
+	}
+	
+	public void Weapon setWeapon(Weapon weapon){
+		this.weapon = weapon;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
