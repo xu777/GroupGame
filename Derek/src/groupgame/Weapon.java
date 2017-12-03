@@ -13,9 +13,9 @@ class Weapon {
 
     public Weapon(String Weapon) {
 		
-		private String name;
-		privaet int damage;
-		private int rank;
+//		private String name;
+//		privaet int damage;
+//		private int rank;
 		
     }
     

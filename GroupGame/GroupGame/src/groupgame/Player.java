@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package groupgame;
 
 /**
  *
  * @author ryanlingxiao
  */
-public abstract class Player {
+public class Player {
     public int hitPoints;
     public int strength;
     public int wisdom;
@@ -19,17 +15,21 @@ public abstract class Player {
     public String name;
     public int Ability;
     
-    private static int Bash= 1;
-    private static int Steal= 2;
-    private static int Fireball= 3;
+    private static final int BASH= 1;
+    private static final int STEAL= 2;
+    private static final int FIREBALL= 3;
 
-    public Player(int hitPoints, int Strength, int Wisdom, int Agility, Weapon weapon, Armor armor){
+    public Player(String name, int hitPoints, int Strength, int Wisdom, int Agility, Weapon weapon, Armor armor){
+        this.name = name;
         this.hitPoints = hitPoints;
         this.strength = Strength;
         this.wisdom = Wisdom;
         this.agility =Agility;
         this.weapon = weapon;
         this.armor = armor;
+    }
+    
+    public Player(){
     }
     
     public int getHitPoints() {
@@ -79,8 +79,6 @@ public abstract class Player {
     public void setArmor(Armor armor) {
         this.armor = armor;
     }
-
-    public abstract void role();
 
     public void setName(String name) {
         this.name = name;

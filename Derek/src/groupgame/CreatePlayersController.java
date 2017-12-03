@@ -196,7 +196,7 @@ public class CreatePlayersController implements Initializable {
         p1.setAgility(RollStats());
         p1.setStrength(RollStats());
         p1.setWisdom(RollStats());
-        strengthNumView.setText();
+        strengthNumView.setText(Integer.toString(p1.getStrength()));
        // agilityNumView.setText();
        // wisdomNumView.setText();
         
