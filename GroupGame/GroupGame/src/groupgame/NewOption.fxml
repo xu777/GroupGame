@@ -39,7 +39,7 @@
                <font>
                   <Font size="24.0" />
                </font></ToggleButton>
-            <ToggleButton layoutX="114.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Small">
+            <ToggleButton layoutX="128.0" layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Small">
                <toggleGroup>
                   <ToggleGroup fx:id="Map" />
                </toggleGroup>
@@ -47,11 +47,11 @@
                   <Font size="24.0" />
                </font>
             </ToggleButton>
-            <ToggleButton layoutX="114.0" layoutY="440.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Medium" toggleGroup="$Map">
+            <ToggleButton layoutX="128.0" layoutY="429.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Medium" toggleGroup="$Map">
                <font>
                   <Font size="24.0" />
                </font></ToggleButton>
-            <ToggleButton layoutX="114.0" layoutY="505.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Large" toggleGroup="$Map">
+            <ToggleButton layoutX="128.0" layoutY="494.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="Large" toggleGroup="$Map">
                <font>
                   <Font size="24.0" />
                </font></ToggleButton>
