@@ -9,6 +9,6 @@ package groupgame;
  *
  * @author ryanlingxiao
  */
-public class Armor {
+public class Weapons {
     
 }

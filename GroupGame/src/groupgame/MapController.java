@@ -14,8 +14,8 @@ import javafx.fxml.Initializable;
  *
  * @author ryanlingxiao
  */
-public class GameController implements Initializable {
-
+public class MapController implements Initializable, ControlledScreen {
+    ScreenController myController;
     /**
      * Initializes the controller class.
      */
@@ -24,4 +24,8 @@ public class GameController implements Initializable {
         // TODO
     }    
     
+        public void setScreenParent(ScreenController screenParent) {
+        myController = screenParent;
+    }
+
 }

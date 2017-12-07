@@ -9,6 +9,6 @@ package groupgame;
  *
  * @author ryanlingxiao
  */
-public class Weapon {
-    
+public interface ControlledScreen {
+    public void setScreenParent(ScreenController screenPage);
 }

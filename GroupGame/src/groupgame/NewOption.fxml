@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="736" maxWidth="414.0" minHeight="480.0" minWidth="320.0" prefHeight="736.0" prefWidth="414.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.NewOptionController">
+   <children>
+      <AnchorPane layoutX="11.0" layoutY="28.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label layoutX="18.0" layoutY="111.0" text="Players:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="271.0" text="Map:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ToggleButton fx:id="tb1ply" layoutX="117.0" layoutY="111.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" selected="true" styleClass="buttons" text="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Players" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="tb2ply" layoutX="197.0" layoutY="111.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="buttons" text="2" toggleGroup="$Players">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="tb3ply" layoutX="117.0" layoutY="191.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="buttons" text="3" toggleGroup="$Players">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="tb4ply" layoutX="197.0" layoutY="191.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="buttons" text="4" toggleGroup="$Players">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="tbSmall" layoutX="118.0" layoutY="306.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" selected="true" styleClass="buttons" stylesheets="@style.css" text="Small">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="MapSize" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="tbMed" layoutX="118.0" layoutY="371.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" styleClass="buttons" text="Medium" toggleGroup="$MapSize">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="tbLarge" layoutX="118.0" layoutY="436.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" styleClass="buttons" text="Large" toggleGroup="$MapSize">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </ToggleButton>
+            <AnchorPane layoutX="17.0" layoutY="520.0" prefHeight="96.0" prefWidth="361.0">
+               <children>
+                  <Button fx:id="btnNext" layoutX="61.0" layoutY="8.0" mnemonicParsing="false" onAction="#nextButtonAction" prefHeight="80.0" prefWidth="240.0" styleClass="buttons" text="Next">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="322.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="40.0" styleClass="homebutton">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

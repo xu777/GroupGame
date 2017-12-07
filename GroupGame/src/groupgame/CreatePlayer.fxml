@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="736" maxWidth="414.0" minHeight="480.0" minWidth="320.0" prefHeight="736.0" prefWidth="414.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.CreatePlayerController">
+    <children>
+        <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <Label layoutX="78.0" layoutY="42.0" text="Player">
+                    <font>
+                        <Font size="44.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbPlayerNum" layoutX="228.0" layoutY="42.0" text="##">
+                    <font>
+                        <Font size="44.0" />
+                    </font>
+                </Label>
+                <AnchorPane layoutX="43.0" layoutY="160.0" prefHeight="310.0" prefWidth="116.0">
+                    <children>
+                        <Label layoutX="6.0" layoutY="25.0" text="Name:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="7.0" layoutY="99.0" text="HP:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="5.0" layoutY="155.0" text="Strength:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="204.0" text="Wisdom:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="251.0" text="Agility:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="141.0" layoutY="138.0" prefHeight="332.0" prefWidth="239.0">
+                    <children>
+                        <TextField fx:id="tfName" layoutX="36.0" layoutY="39.0" prefHeight="40.0" />
+                        <Label fx:id="hpValue" layoutX="36.0" layoutY="120.0" text="20">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="strValue" layoutX="36.0" layoutY="177.0" text="00">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="wisValue" layoutX="36.0" layoutY="226.0" text="00">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="agiValue" layoutX="36.0" layoutY="274.0" text="00">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="110.0" layoutY="264.0" mnemonicParsing="false" onAction="#rerollButtonAction" prefHeight="57.0" prefWidth="120.0" styleClass="buttons" text="Re-roll">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="17.0" layoutY="478.0" prefHeight="128.0">
+                    <children>
+                        <ToggleButton fx:id="tbFighter" layoutX="-5.0" layoutY="29.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="126.0" styleClass="buttons" text="Fighter">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Specialties" />
+                     </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tbThief" layoutX="121.0" layoutY="29.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Thief" toggleGroup="$Specialties">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tbWizard" layoutX="241.0" layoutY="29.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Wizard" toggleGroup="$Specialties">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </ToggleButton>
+                        <Label text="Role:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="82.0" layoutY="79.0" text="Specialty:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="224.0" layoutY="79.0" text="Bash" textFill="RED">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="28.0" layoutY="606.0" prefHeight="96.0" prefWidth="361.0">
+                    <children>
+                        <Button fx:id="btnNext" layoutX="61.0" layoutY="8.0" mnemonicParsing="false" onAction="#nextButtonAction" prefHeight="80.0" prefWidth="240.0" styleClass="buttons" text="Next">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="332.0" layoutY="24.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="40.0" styleClass="homebutton">
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@pics/home.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>
