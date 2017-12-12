@@ -25,8 +25,8 @@ public class GroupGame extends Application {
     public static String newOptionFile = "NewOption.fxml";
     public static String createPlayerID = "CreatePlayer";
     public static String createPlayerFile = "CreatePlayer.fxml";
-    public static String mapScreenID = "MapScreen";
-    public static String mapScreenFile = "MapScreen.fxml";
+    public static String GameMainScreenID = "GameMainScreen";
+    public static String GameMainScreenFile = "GameMainScreen.fxml";
     public static GameController gameController;
 
     //getting screen size
@@ -44,11 +44,15 @@ public class GroupGame extends Application {
 //        }//preset stage/scene size
 
         //System.out.println(Integer.toString(screenWidth) + Integer.toString(screenHeight));
+        
+        gameController = new GameController(1,4);//default player and map size
+//        gameController.newMapPane();//preload a Map Pane
+        
         ScreenController mainContainer = new ScreenController();
         mainContainer.loadScreen(GroupGame.homeScreenID, GroupGame.homeScreenFile);
         mainContainer.loadScreen(GroupGame.newOptionID, GroupGame.newOptionFile);
         mainContainer.loadScreen(GroupGame.createPlayerID, GroupGame.createPlayerFile);
-        mainContainer.loadScreen(GroupGame.mapScreenID, GroupGame.mapScreenFile);
+        mainContainer.loadScreen(GroupGame.GameMainScreenID, GroupGame.GameMainScreenFile);
         mainContainer.setScreen(GroupGame.homeScreenID);
 
         Group root = new Group();

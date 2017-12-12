@@ -13,11 +13,13 @@ public class Rooms {
     public int row;
     public int col;
     public boolean clear;
+    public boolean current;
             
-    public Rooms(int row, int col, boolean clear) {
+    public Rooms(int row, int col, boolean clear, boolean current) {
         this.row = row;
         this.col = col;
         this.clear = clear;
+        this.current = current;
     }
 
     public void setRow(int row) {
@@ -32,6 +34,10 @@ public class Rooms {
         this.clear = clear;
     }
 
+    public void setCurrent(boolean current) {
+        this.current = current;
+    }
+
     public int getRow() {
         return row;
     }
@@ -42,6 +48,10 @@ public class Rooms {
 
     public boolean isClear() {
         return clear;
+    }
+
+    public boolean isCurrent() {
+        return current;
     }
     
 }

@@ -93,6 +93,8 @@ public class NewOptionController implements Initializable, ControlledScreen {
 
         GroupGame.gameController = new GameController(numOfPlayers, mapSize);
         GroupGame.gameController.printMap();// test line - print map
+        GroupGame.gameController.newMapPane();
+        
         myController.setScreen(GroupGame.createPlayerID);
     }//next-> start a new game based on selection 
 }

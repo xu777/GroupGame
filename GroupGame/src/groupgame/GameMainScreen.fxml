@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="736" maxWidth="414.0" minHeight="480.0" minWidth="320.0" prefHeight="736.0" prefWidth="414.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.GameMainController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Button layoutX="207.0" layoutY="47.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" styleClass="dbuttons" text="Save" />
+      <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="287.0" layoutY="47.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="80.0" styleClass="home" />
+      <AnchorPane fx:id="mapPane" layoutX="14.0" layoutY="87.0" opacity="0.0" prefHeight="639.0" prefWidth="386.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Button layoutX="162.0" layoutY="160.0" mnemonicParsing="false" prefWidth="70.0" styleClass="dbuttons" text="North" />
+            <Button layoutX="162.0" layoutY="443.0" mnemonicParsing="false" prefWidth="70.0" styleClass="dbuttons" text="South" />
+            <Button layoutX="21.0" layoutY="302.0" mnemonicParsing="false" prefWidth="70.0" rotate="270.0" styleClass="dbuttons" text="West" />
+            <Button layoutX="304.0" layoutY="302.0" mnemonicParsing="false" prefWidth="70.0" rotate="90.0" styleClass="dbuttons" text="East" />
+            <BorderPane fx:id="mapBox" layoutX="72.0" layoutY="193.0" prefHeight="250.0" prefWidth="250.0" styleClass="mapbox">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="roomPane" prefHeight="636.0" prefWidth="394.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0" />
+      <ToggleButton fx:id="tbMap" layoutX="127.0" layoutY="47.0" mnemonicParsing="false" onAction="#mapShow" prefHeight="40.0" prefWidth="80.0" styleClass="dbuttons" text="Map">
+         <toggleGroup>
+            <ToggleGroup fx:id="RoomOrMap" />
+         </toggleGroup></ToggleButton>
+      <ToggleButton fx:id="tbRoom" layoutX="47.0" layoutY="47.0" mnemonicParsing="false" onAction="#roomShow" prefHeight="40.0" prefWidth="80.0" selected="true" styleClass="dbuttons" text="Room" toggleGroup="$RoomOrMap" />
+   </children>
+</AnchorPane>

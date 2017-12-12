@@ -72,15 +72,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="322.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="40.0" styleClass="homebutton">
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@pics/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="287.0" layoutY="47.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="80.0" styleClass="home" />
          </children>
       </AnchorPane>
    </children>

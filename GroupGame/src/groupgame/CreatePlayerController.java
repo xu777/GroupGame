@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -64,6 +65,7 @@ public class CreatePlayerController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lbPlayerNum.setText("#1");
+        tbFighter.setSelected(true);
         index = 1;
         hp = 20;
         roll();         //initialize player 1 value, all attributes are rolled except hp.
@@ -85,31 +87,37 @@ public class CreatePlayerController implements Initializable, ControlledScreen {
 
     @FXML
     private void nextButtonAction(ActionEvent event) {
-        System.out.println(index);
-        if (index == 1){//create new player group when index
-        players = new Players[GroupGame.gameController.numOfPlayers];}
-        
-        players[index-1] = new Players(tfName.getText(), hp, str, wis, agi);//add player to player array on each click
-        
-        if (index <= GroupGame.gameController.numOfPlayers - 1) {
-            
-            players[index-1].printPlayer();
-            
-            index++;
-            System.out.println(index);
-            lbPlayerNum.setText("#" + index);
-        } else {//after last player added 
-            //print
-            players[index-1].printPlayer();
-            
-            // reset text and index
-            lbPlayerNum.setText("#" + 1);
-            index = 1;
-            
-            //set players array to game controller.
-            GroupGame.gameController.setPlayers(players);
-            //show next screen
-            myController.setScreen(GroupGame.mapScreenID);
+        System.out.println("Player: #" + index);
+        if (!"".equals(tfName.getText()) && (tbFighter.isSelected() || tbThief.isSelected() || tbWizard.isSelected())) {
+            if (index == 1) {//create new player group when index
+                players = new Players[GroupGame.gameController.numOfPlayers];
+            }
+
+            players[index - 1] = new Players(tfName.getText(), hp, str, wis, agi);//add player to player array on each click
+
+            if (index <= GroupGame.gameController.numOfPlayers - 1) {
+
+                players[index - 1].printPlayer();
+
+                index++;
+                lbPlayerNum.setText("#" + index);
+            } else {//after last player added 
+                //print
+                players[index - 1].printPlayer();
+
+                // reset text and index
+                lbPlayerNum.setText("#" + 1);
+                index = 1;
+
+                //set players array to game controller.
+                GroupGame.gameController.setPlayers(players);
+                //show next screen
+                myController.setScreen(GroupGame.GameMainScreenID);
+            }
+            roll();
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "Please enter the name and pick a job.");        
         }
     }
 
