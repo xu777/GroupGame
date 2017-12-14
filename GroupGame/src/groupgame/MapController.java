@@ -120,6 +120,9 @@ public class MapController implements Initializable, ControlledScreen {
     public void roomBtnAction() {
         tbRoom.setSelected(true);
         lbClear();
+        iniAction();
+        iniCharactors();
+        EnterRoom(coordX, coordY);
         showRoom();
     }
 
@@ -175,7 +178,6 @@ public class MapController implements Initializable, ControlledScreen {
         return coordY == mapSize - 1 || isInBattle(coordX, coordY);
     }
 
-    @FXML
     private void moveNorth() {
         coordY--;
         GroupGame.gameController.setCoordY(coordY);
@@ -183,7 +185,6 @@ public class MapController implements Initializable, ControlledScreen {
         System.out.println("Moved East");
     }
 
-    @FXML
     private void moveSouth() {
         coordY++;
         GroupGame.gameController.setCoordY(coordY);
@@ -191,7 +192,6 @@ public class MapController implements Initializable, ControlledScreen {
         System.out.println("Moved West");
     }
 
-    @FXML
     private void moveWest() {
         coordX--;
         GroupGame.gameController.setCoordX(coordX);
@@ -199,7 +199,6 @@ public class MapController implements Initializable, ControlledScreen {
         System.out.println("Moved South");
     }
 
-    @FXML
     private void moveEast() {
         coordX++;
         GroupGame.gameController.setCoordX(coordX);
@@ -302,6 +301,8 @@ public class MapController implements Initializable, ControlledScreen {
 
     private void EnterRoom(int CoordX, int CoordY) {//first room choice
         this.battle = new Battle();
+        this.coordX = CoordX;
+        this.coordY = CoordY;
 
         btnStart = new Button("Start");
         btnStart.setStyle("-fx-font: 16 arial");
@@ -413,7 +414,6 @@ public class MapController implements Initializable, ControlledScreen {
                     System.out.println("Battle won!");
                 }
                 showEnemy(targetID);
-
                 battleNext(round);
             }
         });
@@ -552,8 +552,11 @@ public class MapController implements Initializable, ControlledScreen {
         Charactors target;
 
         if (!battleQueue.isEmpty()) {
-            ctr = (Charactors) battleQueue.getFront();
-            battleQueue.removeFront();
+            ctr = (Charactors) battleQueue.removeFront();
+            System.out.print("Next:  ");
+            ctr.printPlayer();
+            
+            
             ctr.printPlayer();
             while (ctr.getRole() == 4) {//if it's enemy move
                 Random randomTarget = new Random();
@@ -572,13 +575,12 @@ public class MapController implements Initializable, ControlledScreen {
                     tbPlayers[targetID].setSelected(false);
                     btnExcute.setDisable(true);
                 }
-                battleQueue.removeFront();
-                ctr = (Charactors) battleQueue.getFront();
+                ctr = (Charactors) battleQueue.removeFront();
                 onActionID = ctr.getId();
             }
             setOn();
             System.out.println("PlayerPick");
-            showPlayer(ctr.getId());
+            showPlayer(onActionID);
             tbSkill.setText(players[onActionID].getSkillName());
         } else {
             round++;
@@ -595,28 +597,6 @@ public class MapController implements Initializable, ControlledScreen {
             battleNext(round);
         }
 
-//        for (int index = 0; index < battleparties.length; index++) {
-//        
-//        if (ctr.isAlive()) {
-//            onActionID = ctr.getId();
-//            if (ctr.getRole() < 4) {
-//                setOn();
-//                tbSkill.setText(players[onActionID].getSkillName());
-//                showPlayer(onActionID);
-//                showRoom();
-//            } else {
-//
-//            }
-//            }
-//        round++;
-//        }
-//        while (livePlayers != 0 && liveEnemies != 0 && !ranaway) {        //until it's end ,keep rounds
-//
-//            battleQueue.removeFront();
-//        }
-//        
-//            
-//        }
     }
 
     public void setOn() {
