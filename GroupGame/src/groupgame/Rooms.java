@@ -10,10 +10,10 @@ package groupgame;
  * @author ryanlingxiao
  */
 public class Rooms {
-    public int row;
-    public int col;
-    public boolean clear;
-    public boolean current;
+    private int row;
+    private int col;
+    private boolean clear;
+    private boolean current;
             
     public Rooms(int row, int col, boolean clear, boolean current) {
         this.row = row;
@@ -53,5 +53,5 @@ public class Rooms {
     public boolean isCurrent() {
         return current;
     }
-    
+   
 }

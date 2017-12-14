@@ -42,22 +42,31 @@ public class CreatePlayerController implements Initializable, ControlledScreen {
     @FXML
     private Label lbPlayerNum;
     @FXML
-    private Label hpValue;
+    private Label lbHpValue;
     @FXML
-    private Label strValue;
+    private Label lbStrValue;
     @FXML
-    private Label wisValue;
+    private Label lbWisValue;
     @FXML
-    private Label agiValue;
+    private Label lbAgiValue;
+    @FXML
+    private Label lbSkillName;
     @FXML
     private TextField tfName;
 
     private int index;
-    private int str;
-    private int wis;
+    private int str, tempstr;
+    private int wis, tempwis;
     private int hp;
-    private int agi;
-    private Players[] players;
+    private int agi, tempagi;
+    private Charactors[] players;
+    private int role;
+    String skillTitle;
+    String roleTitle;
+
+    public static final int FIGHTER = 1;
+    public static final int THIEF = 2;
+    public static final int WIZARD = 3;
 
     /**
      * Initializes the controller class.
@@ -66,9 +75,14 @@ public class CreatePlayerController implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         lbPlayerNum.setText("#1");
         tbFighter.setSelected(true);
-        index = 1;
+        index = 0;
         hp = 20;
-        roll();         //initialize player 1 value, all attributes are rolled except hp.
+        roll();
+        tempstr = +3;
+        tempwis = - 3;
+        tempagi = 0;
+        setText();
+        //initialize player 1 value, all attributes are rolled except hp.
     }
 
     public void setScreenParent(ScreenController screenParent) {
@@ -86,46 +100,81 @@ public class CreatePlayerController implements Initializable, ControlledScreen {
     }//re-roll  Dice for better attributes
 
     @FXML
+    private void fighterButtonAction(ActionEvent event) {
+        tbFighter.setSelected(true);
+        role = FIGHTER;
+        roleTitle = "Fighter";
+        skillTitle = "Bash";
+        lbSkillName.setText(skillTitle);
+        tempstr = +3;
+        tempwis = - 3;
+        tempagi = 0;
+        setText();
+    }//re-roll  Dice for better attributes
+
+    @FXML
+    private void thiefButtonAction(ActionEvent event) {
+        tbThief.setSelected(true);
+        role = THIEF;
+        roleTitle = "Thief";
+        skillTitle = "Steal";
+        lbSkillName.setText(skillTitle);
+        tempstr = - 2;
+        tempwis = +2;
+        tempagi = +3;
+        setText();
+    }//re-roll  Dice for better attributes
+
+    @FXML
+    private void wizardButtonAction(ActionEvent event) {
+        tbWizard.setSelected(true);
+        role = WIZARD;
+        roleTitle = "Wizard";
+        skillTitle = "Fireball";
+        lbSkillName.setText(skillTitle);
+        tempstr = - 5;
+        tempwis = +5;
+        tempagi = - 3;
+        setText();
+    }//re-roll  Dice for better attributes
+
+    @FXML
     private void nextButtonAction(ActionEvent event) {
-        System.out.println("Player: #" + index);
+        int numOfPlayers = GroupGame.gameController.getNumOfPlayers();
+        System.out.println("Player: #" + (index + 1));
         if (!"".equals(tfName.getText()) && (tbFighter.isSelected() || tbThief.isSelected() || tbWizard.isSelected())) {
-            if (index == 1) {//create new player group when index
-                players = new Players[GroupGame.gameController.numOfPlayers];
+            if (index == 0) {//create new player group when index
+                players = new Charactors[numOfPlayers];
             }
+            players[index] = new Charactors();
+            players[index].CreateCharactors(index, tfName.getText(), hp, str + tempstr, wis + tempwis, agi + tempagi, role);//add player to player array on each click
+            players[index].printPlayer();
 
-            players[index - 1] = new Players(tfName.getText(), hp, str, wis, agi);//add player to player array on each click
-
-            if (index <= GroupGame.gameController.numOfPlayers - 1) {
-
-                players[index - 1].printPlayer();
-
+            if (index < numOfPlayers - 1) {
                 index++;
-                lbPlayerNum.setText("#" + index);
+                lbPlayerNum.setText("#" + (index+1));
             } else {//after last player added 
-                //print
-                players[index - 1].printPlayer();
 
                 // reset text and index
                 lbPlayerNum.setText("#" + 1);
-                index = 1;
+                index = 0;
 
                 //set players array to game controller.
                 GroupGame.gameController.setPlayers(players);
                 //show next screen
-                myController.setScreen(GroupGame.GameMainScreenID);
+                myController.setScreen(GroupGame.MapScreenID);
             }
             roll();
-        }
-        else{
-        JOptionPane.showMessageDialog(null, "Please enter the name and pick a job.");        
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter the name and pick a job.");
         }
     }
 
     private void setText() {
-        hpValue.setText(Integer.toString(hp));
-        strValue.setText(Integer.toString(str));
-        wisValue.setText(Integer.toString(wis));
-        agiValue.setText(Integer.toString(agi));
+        lbHpValue.setText(Integer.toString(hp));
+        lbStrValue.setText(Integer.toString(str + tempstr));
+        lbWisValue.setText(Integer.toString(wis + tempwis));
+        lbAgiValue.setText(Integer.toString(agi + tempagi));
     }//set text based on private vlaues;
 
     private void roll() {

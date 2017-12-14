@@ -1,0 +1,290 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package groupgame;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+
+/**
+ * FXML Controller class
+ *
+ * @author ryanlingxiao
+ */
+public class MapController implements Initializable, ControlledScreen {
+
+    ScreenController myController;
+    private int numOfPlayers;
+    private int coordX;
+    private int coordY;
+    private int mapSize;
+
+    @FXML
+    private ToggleButton tbRoom;
+    @FXML
+    private ToggleButton tbMap;
+
+//    @FXML
+//    private Button btnStart;
+//
+//    @FXML
+//    private ToggleButton tbAttack;
+//    @FXML
+//    private ToggleButton tbSkill;
+//    @FXML
+//    private ToggleButton tbRunAway;
+//    @FXML
+//    private ToggleButton tbHide;
+//    @FXML
+//    private Button btnNextRound;
+
+    @FXML
+    private Button btnNorth;
+    @FXML
+    private Button btnSouth;
+    @FXML
+    private Button btnEast;
+    @FXML
+    private Button btnWest;
+
+    @FXML
+    private BorderPane gameBox = new BorderPane();
+    @FXML
+    private Label lb1;
+    @FXML
+    private Label lb2;
+    @FXML
+    private Label lb3;
+    @FXML
+    private Label lb4;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        tbRoom.setSelected(true);
+        tbMap.setSelected(false);
+        lb1.setText("Welcome to game");
+        lb2.setText("");
+        lb3.setText("");
+        lb4.setText("");
+    }
+
+    public void setScreenParent(ScreenController screenParent) {
+        myController = screenParent;
+    }
+
+    @FXML
+    public void mapBtnAction(ActionEvent event) {
+        iniDirectionBtns(); // initial direction buttons
+        tbMap.setSelected(true);
+        loadMap();
+    }//refresh the map pane and show it in the window
+
+    @FXML
+    public void roomBtnAction() {
+
+    }
+
+    @FXML
+    private void homeButtonAction(ActionEvent event) {
+
+        myController.setScreen(GroupGame.homeScreenID);
+        clearBox();
+    }//home button action ends
+
+    private void refreshDirectionBtn() {
+
+        if (cantGoNorth()) {
+            btnNorth.setDisable(true);
+        } else {
+            btnNorth.setDisable(false);
+        }
+
+        if (cantGoSouth()) {
+            btnSouth.setDisable(true);
+        } else {
+            btnSouth.setDisable(false);
+        }
+        if (cantGoWest()) {
+            btnWest.setDisable(true);
+        } else {
+            btnWest.setDisable(false);
+        }
+        if (cantGoEast()) {
+            btnEast.setDisable(true);
+        } else {
+            btnEast.setDisable(false);
+        }
+    }
+
+    private boolean isInBattle(int coordX, int coordY) {
+        return GroupGame.gameController.map[coordX][coordY].isClear();
+    }
+
+    private boolean cantGoWest() {
+        return coordX == 0 || isInBattle(coordX, coordY);
+    }
+
+    private boolean cantGoEast() {
+        return coordX == mapSize - 1 || isInBattle(coordX, coordY);
+    }
+
+    private boolean cantGoNorth() {
+        return coordY == 0 || isInBattle(coordX, coordY);
+    }
+
+    private boolean cantGoSouth() {
+        return coordY == mapSize - 1 || isInBattle(coordX, coordY);
+    }
+
+    @FXML
+    private void moveNorth() {
+        coordY--;
+        GroupGame.gameController.setCoordY(coordY);
+        loadMap();
+        System.out.println("Moved East");
+    }
+
+    @FXML
+    private void moveSouth() {
+        coordY++;
+        GroupGame.gameController.setCoordY(coordY);
+        loadMap();
+        System.out.println("Moved West");
+    }
+
+    @FXML
+    private void moveWest() {
+        coordX--;
+        GroupGame.gameController.setCoordX(coordX);
+        loadMap();
+        System.out.println("Moved South");
+    }
+
+    @FXML
+    private void moveEast() {
+        coordX++;
+        GroupGame.gameController.setCoordX(coordX);
+        loadMap();
+        System.out.println("Moved North");
+    }
+
+    private void showCoordInLable() {
+        lb1.setText("Room: (" + coordX + "," + coordY + ")");
+    }
+
+    private void showClearInLable() {
+        String status;
+        if (GroupGame.gameController.isClear(coordX, coordY)) {
+            status = "Pick a room to move";
+        } else {
+            status = "You can't move before clear";
+        }
+        lb2.setText(status);
+    }
+
+    private void setNeighbourAvailabe() {
+        if (!cantGoWest()) {// if it can go W, able the room after move
+            GroupGame.gameController.setRoomDisable(coordX - 1, coordY, false);
+        }
+        if (!cantGoEast()) {// if it can go E, able the room after move
+            GroupGame.gameController.setRoomDisable(coordX + 1, coordY, false);
+        }
+        if (!cantGoSouth()) {// if it can go Sourth, able the room after move
+            GroupGame.gameController.setRoomDisable(coordX, coordY + 1, false);
+        }
+        if (!cantGoNorth()) {// if it can go North, able the room after move
+            GroupGame.gameController.setRoomDisable(coordX, coordY - 1, false);
+        }
+    }
+
+    private void iniDirectionBtns() {
+        btnNorth = new Button("N");
+        btnNorth.setStyle("-fx-font: 16 arial");
+        btnNorth.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                moveNorth();
+            }
+        });
+        btnSouth = new Button("S");
+        btnSouth.setStyle("-fx-font: 16 arial");
+        btnSouth.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                moveSouth();
+            }
+        });
+        btnWest = new Button("W");
+        btnWest.setStyle("-fx-font: 16 arial");
+        btnWest.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                moveWest();
+            }
+        });
+        btnEast = new Button("E");
+        btnEast.setStyle("-fx-font: 16 arial");
+        btnEast.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                moveEast();
+            }
+        });
+
+    }
+
+    private void loadMap() {
+        this.mapSize = GroupGame.gameController.getMapSize();
+        this.coordX = GroupGame.gameController.getCoordX();
+        this.coordY = GroupGame.gameController.getCoordY();
+
+        //set cuurent available, refresh direction btns, then show status in labels. Room next to curret are also able to click on pane. 
+        GroupGame.gameController.setRoomDisable(coordX, coordY, false);
+        refreshDirectionBtn();
+        showCoordInLable();
+        showClearInLable();
+        setNeighbourAvailabe();
+        GroupGame.gameController.refreshMapPane();
+        gameBox.setCenter(GroupGame.gameController.mapPane);
+        gameBox.setTop(btnNorth);
+        gameBox.setBottom(btnSouth);
+        gameBox.setLeft(btnWest);
+        gameBox.setRight(btnEast);
+        gameBox.setAlignment(btnNorth, Pos.CENTER);
+        gameBox.setAlignment(btnSouth, Pos.CENTER);
+        gameBox.setAlignment(btnWest, Pos.CENTER);
+        gameBox.setAlignment(btnEast, Pos.CENTER);
+    }
+
+//    private void firstRoom() {
+//        btnStart = new Button("Start");
+//        btnStart.setStyle("-fx-font: 16 arial");
+//        btnStart.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent e) {
+//                clearBox();
+//                System.out.println("Entered First Room");
+//            }
+//        });
+//        gameBox.setCenter(btnStart);
+//    }
+
+    public void clearBox() {
+//        gameBox.getChildren().clear();
+    }
+}

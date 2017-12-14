@@ -25,17 +25,16 @@ public class GroupGame extends Application {
     public static String newOptionFile = "NewOption.fxml";
     public static String createPlayerID = "CreatePlayer";
     public static String createPlayerFile = "CreatePlayer.fxml";
-    public static String GameMainScreenID = "GameMainScreen";
-    public static String GameMainScreenFile = "GameMainScreen.fxml";
+    public static String MapScreenID = "MapScreen";
+    public static String MapScreenFile = "MapScreen.fxml";
     public static GameController gameController;
 
     //getting screen size
 //    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 //    public int screenWidth = gd.getDisplayMode().getWidth();
 //    public int screenHeight = gd.getDisplayMode().getHeight();
-    
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 //        if (screenWidth >= 414) {
 //            screenWidth = 414;
 //        }
@@ -44,15 +43,15 @@ public class GroupGame extends Application {
 //        }//preset stage/scene size
 
         //System.out.println(Integer.toString(screenWidth) + Integer.toString(screenHeight));
-        
-        gameController = new GameController(1,4);//default player and map size
+        System.out.print("Default:");
+        gameController = new GameController(1, 4);//default player and map size
 //        gameController.newMapPane();//preload a Map Pane
-        
+
         ScreenController mainContainer = new ScreenController();
         mainContainer.loadScreen(GroupGame.homeScreenID, GroupGame.homeScreenFile);
         mainContainer.loadScreen(GroupGame.newOptionID, GroupGame.newOptionFile);
         mainContainer.loadScreen(GroupGame.createPlayerID, GroupGame.createPlayerFile);
-        mainContainer.loadScreen(GroupGame.GameMainScreenID, GroupGame.GameMainScreenFile);
+        mainContainer.loadScreen(GroupGame.MapScreenID, GroupGame.MapScreenFile);
         mainContainer.setScreen(GroupGame.homeScreenID);
 
         Group root = new Group();
@@ -68,5 +67,5 @@ public class GroupGame extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

@@ -16,7 +16,7 @@ public class Dice {
         int output = 0;
         Random random = new Random();
         for (int index = 0; index < times; index++) {
-            output += random.nextInt(face);
+            output += random.nextInt(face)+1;
         }
         return output;
     }

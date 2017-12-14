@@ -23,12 +23,13 @@
 
 .newRoom{
     -fx-background-image: url("room.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
     -fx-background-size: 30px;
     -fx-border-color: black;
     -fx-border-style: solid;
     -fx-border-width: 2px;
-    -fx-background-repeat: stretch;   
-    -fx-background-position: center center;
+
 }
 
 
@@ -93,10 +94,14 @@
         linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
 }
 
+.lbVs{
+    -fx-font-size:18;
+    -fx-pref-width:120;
+}
 
 .home{
     -fx-background-image: url("home.png");
-    -fx-background-size: 40 40; 
+    -fx-background-size: 60 60; 
     -fx-background-repeat: stretch;   
     -fx-background-position: center center;
     -fx-border-color: black;
@@ -145,6 +150,9 @@
 }
 
 .dbuttons:hover{
+    -fx-border-style:solid;
+    -fx-border-width:1px;
+    -fx-border-color: yellow;
     -fx-background-color: 
         rgba(0,0,0,0.08),
         linear-gradient(#9a9a9a, #909090),
@@ -158,5 +166,105 @@
     -fx-font-size: 12px;
     -fx-border-radius: 9,8,5,4;
     -fx-background-insets: 0,1,4,5;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.lbStatus {
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-text-color: darkred;
+}
+
+.tbStyle{
+    -fx-pref-width: 150;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-style:solid;
+    -fx-border-width:1px;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.tbStyle:selected{
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: orangered;
+    -fx-font-size: 12px;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-insets: 0,1,4,5;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.goStyle{
+    -fx-pref-width: 150;
+    -fx-background-image: url("sword.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-size: 25 25;
+    -fx-text-alignment: right;
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: black;
+    -fx-font-weight: bold;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.Enemy{
+    -fx-pref-width: 150;
+    -fx-background-image: url("room.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-size: 25 25;
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: black;
+    -fx-font-weight: bold;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.Enemy:selected{
+    -fx-pref-width: 150;
+    -fx-background-image: url("room.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-size: 25 25;
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: orangered;
+    -fx-font-weight: bold;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.battlePly{
+    -fx-pref-width: 150;
+    -fx-background-image: url("player.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-size: 25 25;
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: black;
+    -fx-font-weight: bold;
+    -fx-border-radius: 9,8,5,4;
+    -fx-background-radius: 9,8,5,4;
+}
+
+.battlePly:selected{
+    -fx-pref-width: 150;
+    -fx-background-image: url("player.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center center;
+    -fx-background-size: 25 25;
+    -fx-border-style:solid;
+    -fx-border-width:3px;
+    -fx-border-color: orangered;
+    -fx-font-weight: bold;
+    -fx-border-radius: 9,8,5,4;
     -fx-background-radius: 9,8,5,4;
 }

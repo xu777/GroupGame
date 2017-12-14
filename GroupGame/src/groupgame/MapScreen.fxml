@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="736" maxWidth="414.0" minHeight="480.0" minWidth="320.0" prefHeight="736.0" prefWidth="414.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupgame.MapController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Button layoutX="207.0" layoutY="47.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" styleClass="dbuttons" text="Save" />
+      <Button fx:id="btnHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="287.0" layoutY="47.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="40.0" prefWidth="80.0" styleClass="home" />
+      <ToggleButton fx:id="tbMap" layoutX="127.0" layoutY="47.0" mnemonicParsing="false" onAction="#mapBtnAction" prefHeight="40.0" prefWidth="80.0" styleClass="dbuttons" text="Map">
+         <toggleGroup>
+            <ToggleGroup fx:id="RoomOrMap" />
+         </toggleGroup></ToggleButton>
+      <ToggleButton fx:id="tbRoom" layoutX="47.0" layoutY="47.0" mnemonicParsing="false" onAction="#roomBtnAction" prefHeight="40.0" prefWidth="80.0" selected="true" styleClass="dbuttons" text="Room" toggleGroup="$RoomOrMap" />
+      <AnchorPane fx:id="mapPane" layoutX="14.0" layoutY="87.0" prefHeight="639.0" prefWidth="386.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <BorderPane fx:id="gameBox" layoutX="12.0" layoutY="138.0" prefHeight="340.0" prefWidth="370.0" styleClass="mapbox" />
+            <Label fx:id="lb1" alignment="CENTER" layoutX="47.0" layoutY="41.0" prefHeight="35.0" prefWidth="300.0" styleClass="lbStatus" text="Room (1,1)" />
+            <Label fx:id="lb2" alignment="CENTER" layoutX="22.0" layoutY="85.0" prefHeight="35.0" prefWidth="350.0" styleClass="lbStatus" text="-not clear" textAlignment="CENTER" />
+            <Label fx:id="lb3" alignment="CENTER" layoutX="22.0" layoutY="14.0" prefHeight="113.0" prefWidth="350.0" styleClass="lbStatus" text="notice label" />
+            <Label fx:id="lb4" alignment="CENTER" layoutX="14.0" layoutY="486.0" prefHeight="148.0" prefWidth="370.0" styleClass="lbStatus" text="notice label 2" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

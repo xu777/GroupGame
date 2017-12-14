@@ -54,22 +54,22 @@
                 <AnchorPane layoutX="141.0" layoutY="138.0" prefHeight="332.0" prefWidth="239.0">
                     <children>
                         <TextField fx:id="tfName" layoutX="36.0" layoutY="39.0" prefHeight="40.0" />
-                        <Label fx:id="hpValue" layoutX="36.0" layoutY="120.0" text="20">
+                        <Label fx:id="lbHpValue" layoutX="36.0" layoutY="120.0" text="20">
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </Label>
-                        <Label fx:id="strValue" layoutX="36.0" layoutY="177.0" text="00">
+                        <Label fx:id="lbStrValue" layoutX="36.0" layoutY="177.0" text="00">
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </Label>
-                        <Label fx:id="wisValue" layoutX="36.0" layoutY="226.0" text="00">
+                        <Label fx:id="lbWisValue" layoutX="36.0" layoutY="226.0" text="00">
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </Label>
-                        <Label fx:id="agiValue" layoutX="36.0" layoutY="274.0" text="00">
+                        <Label fx:id="lbAgiValue" layoutX="36.0" layoutY="274.0" text="00">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -83,7 +83,7 @@
                 </AnchorPane>
                 <AnchorPane layoutX="17.0" layoutY="478.0" prefHeight="128.0">
                     <children>
-                        <ToggleButton fx:id="tbFighter" layoutX="-5.0" layoutY="29.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="126.0" selected="true" styleClass="buttons" text="Fighter">
+                        <ToggleButton fx:id="tbFighter" layoutX="-5.0" layoutY="29.0" mnemonicParsing="false" onAction="#fighterButtonAction" prefHeight="57.0" prefWidth="126.0" selected="true" styleClass="buttons" text="Fighter">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -91,12 +91,12 @@
                         <ToggleGroup fx:id="Specialties" />
                      </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton fx:id="tbThief" layoutX="121.0" layoutY="29.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Thief" toggleGroup="$Specialties">
+                        <ToggleButton fx:id="tbThief" layoutX="121.0" layoutY="29.0" mnemonicParsing="false" onAction="#thiefButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Thief" toggleGroup="$Specialties">
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tbWizard" layoutX="241.0" layoutY="29.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Wizard" toggleGroup="$Specialties">
+                        <ToggleButton fx:id="tbWizard" layoutX="241.0" layoutY="29.0" mnemonicParsing="false" onAction="#wizardButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="buttons" text="Wizard" toggleGroup="$Specialties">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -111,7 +111,7 @@
                                 <Font size="24.0" />
                             </font>
                         </Label>
-                        <Label layoutX="227.0" layoutY="97.0" text="Bash" textFill="RED">
+                        <Label fx:id="lbSkillName" layoutX="227.0" layoutY="97.0" text="Bash" textFill="RED">
                             <font>
                                 <Font size="24.0" />
                             </font>
